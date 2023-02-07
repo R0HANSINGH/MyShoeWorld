@@ -1,0 +1,85 @@
+﻿@using MyShoeWorld.Models
+
+@model IEnumerable<Product>
+
+@foreach (Product product in Model)
+{
+    <div class="container">
+        <div class="row d-flex justify-content-center ">
+            <div class="col-md-8">
+                <div class="card bg-body shadow-lg p-3 mb-5 rounded">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="images p-3">
+                                <div class="text-center p-4  rounded">
+                                    <img id="main-image" src="@product.Picture" class="shadow-lg rounded" width="350" height="300" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="product p-4">
+                                <div class="mt-2 mb-3">
+
+                                    <h3 class="text-uppercase">@product.ProductName</h3>
+                                    <div class="price d-flex flex-row align-items-center">
+                                        <span class="act-price" style="padding-right:20px;"><del>&#8377; @product.UnitPrice</del></span>
+                                        <div class="pl-5">
+                                            <small class="dis-price ml-2" style="font-size:26px; font-weight:bold;">&#8377; @(product.UnitPrice * (100 - @product.Discount) / 100) </small>
+
+                                            <span class="badge" style="background-color:red; margin-left:5px;">@product.Discount % OFF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h6>Warrenty Period : @product.WarrantyPeriod</h6>
+                                <h6 class="about">@product.Description</h6>
+                                <h6>Made in @product.MadeIn and specially for @product.Gender</h6>
+                                <h6>No question ask return policy under @product.ReturnPolicy</h6>
+                                <br />
+
+                                <h6 class="text-uppercase fw-bold">Description : </h6>
+                                <hr style="width:50%" />
+                                <h6>@product.Description</h6>
+
+
+                                <div class="cart mt-4 align-items-center"> <button class="btn btn-danger text-uppercase mr-2 px-4">Add to cart</button> &nbsp; <i class="fa fa-heart text-muted"></i> &nbsp; <i class="fa fa-share-alt text-muted"></i> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+     @* <img src="product.jpg" class="card-img-top" alt="Product">*@
+      <div class="card-body">
+        <h5 class="card-title">Product Name</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="d-flex justify-content-between">
+        <div class="order-summary">
+            <div class="order-summary-item">
+              <span>Product Name</span>
+              <span>$50.00</span>
+            </div>
+            <div class="order-summary-item">
+              <span>Subtotal</span>
+              <span>$50.00</span>
+            </div>
+            <div class="order-summary-item">
+              <span>Total Discount</span>
+              <span>$5.00</span>
+            </div>
+            <div class="order-summary-item">
+              <span>Total Amount</span>
+              <span>$55.00</span>
+            </div>
+          </div>
+          <button class="btn btn-primary add-to-cart">BUY NOW</button>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+}

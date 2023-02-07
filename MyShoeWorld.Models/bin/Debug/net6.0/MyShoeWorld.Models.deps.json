@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "MyShoeWorld.Models/1.0.0": {
+        "runtime": {
+          "MyShoeWorld.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyShoeWorld.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
